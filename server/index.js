@@ -26,7 +26,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use(express.static(join(__dirname, 'dist')));
-app.get('/^(?!/api).*/', (req, res) => {
+app.get(/^(?!\/api).*/, (req, res) => {
   res.sendFile(join(__dirname, 'dist', 'index.html'));
 });
 
