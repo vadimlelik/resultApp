@@ -14,8 +14,9 @@ services:
       - .env
 
   mongo:
-    image: mongo
+    image: mongo:7
     container_name: mern_db
+    restart: always
     ports:
       - 27017:27017
     environment:
